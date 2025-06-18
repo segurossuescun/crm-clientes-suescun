@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="static/estilos.css">
+
+  <title>CRM Seguros Suescun</title>
+</head>
+
+
+<body>
+  <div id="logo-container">
+    <img src="static/LOGO PNG PARA CELULARES 2.png" alt="Logo Seguros Suescun" class="logo-img">
+    <h1>Clientes Seguros Suescun</h1>
+  </div>
+
+  <!-- Botones para cambiar de vista -->
+  <div id="menu-principal">
+    <button id="btn-agregar">Agregar Cliente</button>
+    <button id="btn-buscar">Buscar Cliente</button>
+    <button id="btn-ver-todos">Ver Todos</button>
+    <button id="btn-ver-eliminados">🗑️ Ver Clientes Eliminados</button>
+  </div>
+
+  <!-- Vista: Agregar Cliente -->
+  <div class="vista activa" id="vista-agregar">
+    <h2>Agregar Cliente</h2>
+    <form id="form-agregar-cliente">
+      <div>
+        <label for="nuevo-nombre">Nombre y Apellido:</label>
+        <input type="text" placeholder="Nombre y Apellido" id="nuevo-nombre" required>
+      </div>
+      <div class="fila-corta">
+        <div>
+          <label for="nuevo-nacimiento">Fecha de Nacimiento:</label>
+          <input type="date" id="nuevo-nacimiento" required>
+        </div>
+        <div>
+          <label for="nuevo-telefono">Teléfono:</label>
+          <input type="text" id="nuevo-telefono" placeholder="Teléfono" required>
+        </div>
+      </div>
+      <div class="fila-corta">
+        <div style="flex: 2;">
+          <label for="nuevo-correo-usuario">Correo:</label>
+          <input type="text" placeholder="usuario" id="nuevo-correo-usuario" required>
+        </div>
+        <div style="flex: 1;">
+          <select id="nuevo-correo-dominio" required>
+            <option value="@gmail.com">@gmail.com</option>
+            <option value="@yahoo.com">@yahoo.com</option>
+            <option value="@hotmail.com">@hotmail.com</option>
+            <option value="@outlook.com">@outlook.com</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="nuevo-direccion">Dirección:</label>
+        <input type="text" id="nuevo-direccion" placeholder="Dirección" required>
+      </div>
+      <div class="fila-corta">
+        <div>
+          <label for="nuevo-sexo">Sexo:</label>
+          <select id="nuevo-sexo" required>
+            <option value="">Sexo</option>
+            <option value="M">M</option>
+            <option value="F">F</option>
+          </select>
+        </div>
+        <div>
+          <label for="nuevo-embarazada">¿Embarazada?:</label>
+          <select id="nuevo-embarazada" required disabled>
+            <option value="">¿Embarazada?</option>
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+      </div>
+      <div class="fila-corta">
+        <div>
+          <label for="nuevo-dependes">Dependes:</label>
+          <input type="number" id="nuevo-dependes" required placeholder="Dependes">
+        </div>
+        <div>
+          <label for="nuevo-fuma">¿Fuma?</label>
+          <select id="nuevo-fuma" required>
+            <option value="">¿Fuma?</option>
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+      </div>
+      <div class="fila-corta">
+        <div>
+          <label for="nuevo-salario">Salario Anual:</label>
+          <input type="number" placeholder="Salario Anual" id="nuevo-salario" required>
+        </div>
+        <div>
+          <label for="nuevo-status">Status:</label>
+          <select id="nuevo-status" required>
+            <option value="">Status</option>
+            <option value="Permiso de Trabajo">Permiso de Trabajo</option>
+            <option value="Residente">Residente</option>
+            <option value="Green Card">Green Card</option>
+            <option value="I-94">I-94</option>
+            <option value="Licencia de Conducir">Licencia de Conducir</option>
+          </select>
+        </div>
+      </div>
+      <div class="fila-corta">
+        <div>
+          <label for="nuevo-numero-status">N° Status:</label>
+          <input type="text" placeholder="N° Status" id="nuevo-numero-status" required>
+        </div>
+        <div>
+          <label for="nuevo-sns">SNS:</label>
+          <input type="number" placeholder="SNS" id="nuevo-sns" required>
+        </div>
+      </div>
+      <button type="submit">➕ Agregar Cliente</button>
+    </form>
+  </div>
+
+  <!-- Vista: Buscar Cliente -->
+  <div id="vista-buscar" class="vista">
+    <h2>Buscar Cliente</h2>
+    <div class="buscar-container">
+      <input type="text" placeholder="Nombre y Apellido" id="buscar-nombre">
+    </div>
+    <div id="coincidencias"></div>
+    <div id="info-cliente"></div>
+    <div id="formulario-actualizar"></div>
+  </div>
+
+  <!-- Vista: Ver Todos (Encabezado y botón) -->
+  <div id="vista-ver-todos" class="vista">
+    <div class="bloque-superior">
+      <h2>Listado Completo de Clientes</h2>
+      <button id="boton-exportar" onclick="exportarAExcel()">📅 Exportar a Excel</button>
+    </div>
+  </div>
+
+  <!-- Tabla separada, pero controlada desde mostrarVista -->
+  <div id="tabla-independiente" style="display: none;">
+    <table id="tabla-clientes" class="tabla-clientes">
+      <thead>
+        <tr id="encabezado-clientes"></tr>
+      </thead>
+      <tbody id="cuerpo-clientes"></tbody>
+    </table>
+  </div>
+
+  <!-- Vista: Clientes Eliminados -->
+  <div id="vista-eliminados" class="vista">
+    <h2>Clientes Eliminados</h2>
+  </div>
+
+  <!-- Tabla Separada de clientes Eliminados -->
+  <div id="tabla-eliminados-wrapper" style="display: none;">
+    <table id="tabla-eliminados">
+      <thead id="encabezado-eliminados"></thead>
+      <tbody id="cuerpo-eliminados"></tbody>
+    </table>
+  </div>
+
+  <script src="static/script.js" defer></script>
+</body>
+
+</html>

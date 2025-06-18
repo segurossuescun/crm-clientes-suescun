@@ -1,0 +1,409 @@
+/* =======================
+   FUENTES PERSONALIZADAS
+======================= */
+@font-face {
+  font-family: 'Cherry Cream Soda';
+  src: url('fonts/CherryCreamSoda-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Comic Neue';
+  src: url('fonts/ComicNeue-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ============
+   ESTILO GLOBAL
+============= */
+body {
+  font-family: "Segoe UI", "Lucida Handwriting", cursive, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-family: 'Comic Neue', cursive;
+  letter-spacing: 1px;
+  color: #4B0082;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ============
+   INPUTS Y BOTONES
+============= */
+input[type="text"] {
+  padding: 8px;
+  margin: 10px 0;
+  width: 300px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #8A2BE2;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6a1bb8;
+}
+
+/* ============
+   VISTAS GENERALES
+============= */
+.vista {
+  display: none;
+}
+
+.vista.activa {
+  display: block;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #EC60D3;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(90, 46, 166, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+/* ============
+   LOGO Y ENCABEZADO
+============= */
+#logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+#logo-container img {
+  max-height: 148px;
+  max-width: 280px;
+  object-fit: contain;
+}
+
+#logo-container h1 {
+  font-family: 'Cherry Cream Soda', cursive;
+  font-size: 36px;
+  color: #8A2BE2;
+  margin: 0;
+}
+
+.logo-img {
+  max-height: 70px;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+/* ============
+   BÚSQUEDA
+============= */
+.buscar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.coincidencia-item {
+  background-color: #8b68b0;
+  color: white;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: inherit;
+}
+
+.coincidencia-item:hover {
+  background-color: #553071;
+}
+form button[type="submit"] {
+  display: block;
+  margin: 20px auto;
+}
+
+/* ============
+   MENU PRINCIPAL
+============= */
+#menu-principal {
+  margin: 20px 0;
+  text-align: center;
+}
+
+#menu-principal button {
+  background-color: #5A2EA6;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#menu-principal button:hover {
+  background-color: #4a2393;
+}
+
+/* ============
+   VISTA: VER TODOS
+============= */
+#vista-tabla {
+  text-align: left;
+  padding: 30px;
+  margin-top: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bloque-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#vista-tabla button {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+#vista-tabla button:hover {
+  background-color: #218838;
+}
+
+#tabla-independiente {
+  margin: 40px auto;
+  max-width: 95%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#tabla-clientes {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+#tabla-clientes th,
+#tabla-clientes td {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+#tabla-clientes th {
+  background-color: #553071;
+  color: white;
+}
+/* =============================
+   CAMPO DE CORREO ELECTRÓNICO
+   (usuario + dominio)
+============================= */
+#nuevo-correo-usuario {
+  width: 100%;
+  max-width: 400px;
+}
+
+#nuevo-correo-dominio {
+  width: 100%;
+  height: 36px;
+  padding: 6px;
+  margin-top: 8px;
+}
+/* ============
+   VISTA: CLIENTES ELIMINADOS
+============= */
+#vista-eliminados {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border: 2px solid #EC60D3;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(90, 46, 166, 0.1);
+}
+
+#tabla-eliminados {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#tabla-eliminados th,
+#tabla-eliminados td {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+#tabla-eliminados th {
+  background-color: #c144ae;
+  color: white;
+}
+
+/* =============================
+   FORMULARIO AGREGAR CLIENTE
+============================= */
+
+#form-agregar-cliente {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#form-agregar-cliente > div:not(.fila-corta) {
+  margin-bottom: 10px;
+}
+
+#form-agregar-cliente button {
+  margin-top: 20px;
+}
+
+/* ===============
+   FILAS CORTAS
+=============== */
+.fila-corta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 10px;
+  align-items: flex-start; /* o baseline para mejor alineación vertical */
+}
+
+.fila-corta > div {
+  flex: 1 1 48%;
+
+  min-width: 200px;
+}
+.form-control {
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  max-width: 350px;
+  height: 36px;
+  padding: 6px;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+.form-actualizar-select {
+  width: 100%;
+  max-width: 350px;
+  height: 36px;
+  padding: 6px;
+  margin-top: 8px;
+  box-sizing: border-box;
+  display: block;
+}
+.fila-corta select,
+.fila-corta input {
+  width: 100%;
+  max-width: 350px;
+  height: 36px;
+  padding: 6px;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+#actualizar-direccion {
+  width: 97%;
+}
+
+/* ===============
+   INPUTS Y SELECTS
+=============== */
+#form-agregar-cliente input[type="text"],
+#form-agregar-cliente input[type="date"],
+#form-agregar-cliente select {
+  width: 100%;
+  padding: 6px;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+/* Fecha con altura pareja */
+#nuevo-nacimiento {
+  height: 36px;
+}
+
+/* Correos personalizados */
+#nuevo-correo-usuario {
+  flex: 2;
+  max-width: 400px;
+}
+
+#nuevo-correo-dominio {
+  flex: 1;
+  height: 36px;
+}
+
+/* Campos solos: Nombre y Dirección */
+#nuevo-nombre,
+#nuevo-direccion {
+  width: 97%;
+}
+
+.fila-corta input,
+.fila-corta select {
+  width: 100%;
+  max-width: 350px;
+  height: 36px;
+  padding: 6px;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+/* =============================
+   MEDIA QUERIES (Responsive)
+============================= */
+
+@media (max-width: 600px) {
+  #menu-principal button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .vista {
+    padding: 10px;
+  }
+}

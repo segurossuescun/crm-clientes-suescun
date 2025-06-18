@@ -1,0 +1,38 @@
+// ✅ Archivos principales en D:\CRM Clientes
+!Cliente.xlsm
+!clientes.xlsx
+!Cliente_modificado.xlsx
+!excel_a_json.py
+!exportar_excel.py
+!index.html
+!lista_crm.text
+!modificar_excel.py
+!servidor.py
+
+// ✅ Carpeta static y todo su contenido
+!static/
+!static/buscar_clientes.html
+!static/clientes.json
+!static/estilos.css
+!static/LOGO PNG PARA CELULARES.png
+!static/script.js
+
+// ✅ Subcarpeta static/fonts y sus fuentes
+!static/fonts/
+!static/fonts/CherryCreamSoda-Regular.ttf
+!static/fonts/ComicNeue-Regular.ttf
+!static/fonts/LICENSE.txt
+!static/fonts/OFL.txt
+
+// ✅ Carpeta __pycache__ y su contenido
+!__pycache/
+!__pycache__/**
+
+// ❌ Ignorar archivos basura y temporales
+-*.pyc
+-*.pyo
+-*.log
+-*.tmp
+
+// ❌ Ignorar cualquier otro archivo o carpeta no listada
+*
