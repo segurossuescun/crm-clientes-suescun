@@ -1,7 +1,7 @@
 {
   "name": "CRM Clientes Suescun",
   "short_name": "CRM Suescun",
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#553071",
