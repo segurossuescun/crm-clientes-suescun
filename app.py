@@ -31,7 +31,7 @@ def buscar_clientes():
 # ✅ Ruta principal para mostrar index.html desde /static
 @app.route('/')
 def index():
-    return send_from_directory('static', 'index.html')
+    return send_from_directory('.', 'index.html')
 
 import os
 
